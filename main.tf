@@ -8,7 +8,7 @@ resource "aws_ram_resource_share" "tgw" {
   name                      = "${var.resource_name_prefix}-tgw-share"
   allow_external_principals = false
 
-  tags = merge(var.global_default_tags, var.environment.default_tags, {
+  tags = merge(var.default_tags, {
     Name = "${var.resource_name_prefix}-tgw-share"
   })
 }
